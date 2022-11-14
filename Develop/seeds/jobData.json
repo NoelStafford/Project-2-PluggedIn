@@ -1,0 +1,17 @@
+[
+  {
+    "job_title": "SQL Developer",
+    "job_description": "Create SQL",
+    "salary": "95,000"
+  },
+  {
+    "job_title": "Front-End Web Developer",
+    "job_description": "Create front-end",
+    "salary": "110,200"
+  },
+  {
+    "job_title": "Back-End Web developer",
+    "job_description": "Create back-end",
+    "salary": "100,000"
+  }
+]
