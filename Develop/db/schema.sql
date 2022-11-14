@@ -17,5 +17,5 @@ CREATE TABLE jobs (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 job_title VARCHAR(30),
 job_description TEXT,
-salary DECIMAL
+salary INT
 );
