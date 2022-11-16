@@ -44,7 +44,7 @@ const renderApiData = async () => {
    var jobLink = apiData.data[0].job_apply_link
 
    const apiArray = [empName, empWebsite, jobLink, jobLoc, jobDesc, empType, jobTitle]
-   console.log(jobLoc);
+   console.log(empType);
    
  for (i = 0; i < apiArray.length; i++) {
   apiArray.push(res[i].title);
