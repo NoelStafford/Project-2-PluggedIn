@@ -53,6 +53,6 @@ const renderApiData = async () => {
 };
 
 
-
+// renderApiData();
 
 module.exports = router;
