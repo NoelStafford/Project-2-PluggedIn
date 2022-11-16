@@ -14,11 +14,11 @@ const newFormHandler = async (event) => {
       },
     });
 
-    if (response.ok) {
-      document.location.replace('/job');
-    } else {
-      alert('Failed to create job');
-    }
+  //   if (response.ok) {
+  //     document.location.replace('/job');
+  //   } else {
+  //     alert('Failed to create job');
+  //   }
   }
 };
 

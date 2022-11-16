@@ -15,7 +15,7 @@ const apiUrl = 'https://jsearch.p.rapidapi.com/'
 
 //this is the code that will reflect what the user searches
 //var properSearch = `search?query=${searchQuery}&num_pages=1`;
-
+let apiData = {}
 
 //this is used so that we have a constant to test our API searches with. 
 const originalApiSearchQuery = 'search?query=Python%20developer%20in%20Texas%2C%20USA&num_pages=1'
@@ -28,23 +28,23 @@ const options = {
 	}
 };
 const getApiResponse = async () => {
-	const apiData = await fetch(apiUrl+originalApiSearchQuery, options)
+	apiData = await fetch(apiUrl+originalApiSearchQuery, options)
 	.then(response => response.json());
 	return apiData;
 }
 const renderApiData = async () => {
-    const apiData = await getApiResponse();
+     apiData = await getApiResponse();
   
-   var empName = apiData.data[0].employer_name
-   var jobTitle = apiData.data[0].job_title
-   var empWebsite = apiData.data[0].employer_website
-   var jobLoc = apiData.data[0].job_city+" , "+apiData.data[0].job_state
-   var empType = apiData.data[0].job_employment_type
-   var jobDesc = apiData.data[0].job_description
-   var jobLink = apiData.data[0].job_apply_link
+  //  var empName = apiData.data[0].employer_name
+  //  var jobTitle = apiData.data[0].job_title
+  //  var empWebsite = apiData.data[0].employer_website
+  //  var jobLoc = apiData.data[0].job_city+" , "+apiData.data[0].job_state
+  //  var empType = apiData.data[0].job_employment_type
+  //  var jobDesc = apiData.data[0].job_description
+  //  var jobLink = apiData.data[0].job_apply_link
 
-   const apiArray = [empName, jobTitle, empWebsite, jobLoc, empType, jobDesc, jobLink]
-   console.log(empType);
+  //  const apiArray = [empName, jobTitle, empWebsite, jobLoc, empType, jobDesc, jobLink]
+  //  console.log(empType);
    
 //  for (i = 0; i < apiArray.length; i++) {
   // apiArray.push(res[i].title);
@@ -53,7 +53,6 @@ const renderApiData = async () => {
 };
 
 
-renderApiData();
+
 
 module.exports = router;
-
