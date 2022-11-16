@@ -44,6 +44,14 @@ const renderApiData = async () => {
    var jobTitle = apiData.data[0].job_title
    const apiArray = [empName, empWebsite, jobLink, jobState, jobCity, jobDesc, empType, jobTitle]
    // console.log(apiArray);
-}
+   
+ for (i = 0; i < apiArray.length; i++) {
+    console.log(apiArray[i]);
+  }
+};
+
+
+renderApiData();
+
 module.exports = router;
 
