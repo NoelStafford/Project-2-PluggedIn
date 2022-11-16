@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Profile } = require('../../models');
-
+// user creates the profile
 router.post('/', async (req, res) => {
   try {
     const profileData = await Profile.create(req.body);
@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
-
+// user logs in to profile
 router.post('/login', async (req, res) => {
   try {
     const profileData = await Profile.findOne({ where: { email: req.body.email } });
@@ -47,7 +47,7 @@ router.post('/login', async (req, res) => {
     res.status(400).json(err);
   }
 });
-
+// user logs out of profile
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
