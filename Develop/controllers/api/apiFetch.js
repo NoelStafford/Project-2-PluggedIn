@@ -44,9 +44,10 @@ const renderApiData = async () => {
    var empType = apiData.data[0].job_employment_type
    var jobTitle = apiData.data[0].job_title
    const apiArray = [empName, empWebsite, jobLink, jobState, jobCity, jobDesc, empType, jobTitle]
-   console.log(apiArray);
+  // console.log(apiArray);
    
  for (i = 0; i < apiArray.length; i++) {
+  apiArray.push(res[i].title);
   //  console.log(apiArray[i]);
   }
 };
