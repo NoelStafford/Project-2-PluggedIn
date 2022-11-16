@@ -12,7 +12,7 @@ Job.init(
     },
     employer_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     job_title: {
       type: DataTypes.STRING,
@@ -33,11 +33,18 @@ Job.init(
     job_description: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
+      unique: false,
     },
     job_apply_link: {
       type: DataTypes.STRING,
       allowNull: true,
+    },
+    profile_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'profile',
+        key: 'id',
+      },
     },
   },
   {
