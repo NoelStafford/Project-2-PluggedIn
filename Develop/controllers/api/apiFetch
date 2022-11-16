@@ -31,7 +31,19 @@ const getApiResponse = async () => {
 	.then(response => response.json());
 	return apiData;
 }
-
-
+const renderApiData = async () => {
+    const apiData = await getApiResponse();
+  
+   var empName = apiData.data[0].employer_name
+   var empWebsite = apiData.data[0].employer_website
+   var jobLink = apiData.data[0].job_apply_link
+   var jobState = apiData.data[0].job_state
+   var jobCity = apiData.data[0].job_city
+   var jobDesc = apiData.data[0].job_description
+   var empType = apiData.data[0].job_employment_type
+   var jobTitle = apiData.data[0].job_title
+   const apiArray = [empName, empWebsite, jobLink, jobState, jobCity, jobDesc, empType, jobTitle]
+   // console.log(apiArray);
+}
 module.exports = router;
 
