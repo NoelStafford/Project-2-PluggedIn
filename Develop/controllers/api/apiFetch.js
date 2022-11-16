@@ -36,15 +36,15 @@ const renderApiData = async () => {
     const apiData = await getApiResponse();
   
    var empName = apiData.data[0].employer_name
-   var empWebsite = apiData.data[0].employer_website
-   var jobLink = apiData.data[0].job_apply_link
-   var jobState = apiData.data[0].job_state
-   var jobCity = apiData.data[0].job_city
-   var jobDesc = apiData.data[0].job_description
-   var empType = apiData.data[0].job_employment_type
    var jobTitle = apiData.data[0].job_title
-   const apiArray = [empName, empWebsite, jobLink, jobState, jobCity, jobDesc, empType, jobTitle]
-  // console.log(apiArray);
+   var empWebsite = apiData.data[0].employer_website
+   var jobLoc = apiData.data[0].job_city+" , "+apiData.data[0].job_state
+   var empType = apiData.data[0].job_employment_type
+   var jobDesc = apiData.data[0].job_description
+   var jobLink = apiData.data[0].job_apply_link
+
+   const apiArray = [empName, empWebsite, jobLink, jobLoc, jobDesc, empType, jobTitle]
+   console.log(jobLoc);
    
  for (i = 0; i < apiArray.length; i++) {
   apiArray.push(res[i].title);
