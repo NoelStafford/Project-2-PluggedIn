@@ -32,7 +32,7 @@ router.get('/job/:id', async (req, res) => {
     const jobData = await Job.findByPk(req.params.id, {
       include: [
         {
-          model: Profile,
+          model: Job,
           attributes: ['name'],
         },
       ],
