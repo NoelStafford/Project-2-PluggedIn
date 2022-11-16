@@ -43,13 +43,13 @@ const renderApiData = async () => {
    var jobDesc = apiData.data[0].job_description
    var jobLink = apiData.data[0].job_apply_link
 
-   const apiArray = [empName, empWebsite, jobLink, jobLoc, jobDesc, empType, jobTitle]
+   const apiArray = [empName, jobTitle, empWebsite, jobLoc, empType, jobDesc, jobLink]
    console.log(empType);
    
- for (i = 0; i < apiArray.length; i++) {
-  apiArray.push(res[i].title);
+//  for (i = 0; i < apiArray.length; i++) {
+  // apiArray.push(res[i].title);
   //  console.log(apiArray[i]);
-  }
+  // }
 };
 
 

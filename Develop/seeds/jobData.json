@@ -1,17 +1,29 @@
 [
   {
-    "job_title": "SQL Developer",
-    "job_description": "Create SQL",
-    "salary": "95,000"
-  },
-  {
-    "job_title": "Front-End Web Developer",
+    "employer_name": "Apple",
+    "job_title": "Front-End Web developer",
+    "employer_website": "Apple.com",
+    "job_location": "Oviedo, FL",
+    "emp_type": "FULLTIME",
     "job_description": "Create front-end",
-    "salary": "110,200"
+    "job_apply_link": "bogus.applefruit.com"
   },
   {
+    "employer_name": "Google",
+    "job_title": "Middle-End Web developer",
+    "employer_website": "Google.com",
+    "job_location": "Talahassee, FL",
+    "emp_type": "FULLTIME",
+    "job_description": "Create middle-end",
+    "job_apply_link": "bogus.jokes.com"
+  },
+  {
+    "employer_name": "Microsoft",
     "job_title": "Back-End Web developer",
+    "employer_website": "Microsoft.com",
+    "job_location": "orlando, FL",
+    "emp_type": "FULLTIME",
     "job_description": "Create back-end",
-    "salary": "100,000"
+    "job_apply_link": "bogus.bogus.com"
   }
 ]
