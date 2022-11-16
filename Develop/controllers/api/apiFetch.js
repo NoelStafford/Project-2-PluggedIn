@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const e = require('express');
+const fetch = require('node-fetch');
 
 
 //this is the API key
@@ -43,7 +44,7 @@ const renderApiData = async () => {
    var empType = apiData.data[0].job_employment_type
    var jobTitle = apiData.data[0].job_title
    const apiArray = [empName, empWebsite, jobLink, jobState, jobCity, jobDesc, empType, jobTitle]
-   // console.log(apiArray);
+   console.log(apiArray);
    
  for (i = 0; i < apiArray.length; i++) {
     console.log(apiArray[i]);
