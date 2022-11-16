@@ -24,6 +24,14 @@ Job.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+      job_location: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+      employment_typel: {
+        type: DataTypes.STRING,
+      allowNull: false
+      }
   },
   {
     sequelize,
@@ -31,7 +39,7 @@ Job.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'job',
-  }
+  },
 );
 
 module.exports = Job;
