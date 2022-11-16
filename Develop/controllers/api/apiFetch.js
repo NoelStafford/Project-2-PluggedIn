@@ -47,7 +47,7 @@ const renderApiData = async () => {
    console.log(apiArray);
    
  for (i = 0; i < apiArray.length; i++) {
-    console.log(apiArray[i]);
+  //  console.log(apiArray[i]);
   }
 };
 
