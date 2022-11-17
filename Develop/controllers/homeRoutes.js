@@ -35,28 +35,28 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in profile based on the session ID
     const profileData = await Profile.findByPk(req.session.profile_id, {
       attributes: { exclude: ['password'] },
-      // include: [{ model: Profile }],
+      // include: [{ model: Job }],
     });
 
     const profile = profileData.get({ plain: true });
 
     res.render('createprofile', {
       ...profile,
-      logged_in: req.session.logged_in
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// router.get('/login', (req, res) => {
-//   // If the profile is already logged in, redirect the request to another route
-//   if (req.session.logged_in) {
-//     res.redirect('/profile');
-//     return;
-//   }
+router.get('/login', (req, res) => {
+  // If the profile is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
 
-//   res.render('login');
-// });
+  res.render('login');
+});
 
 module.exports = router;

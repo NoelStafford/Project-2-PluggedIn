@@ -1,7 +1,6 @@
 [
   {
-    "first_name": "Jordan",
-    "last_name": "Colubiale",
+    "name": "Jordan Colubiale",
     "email":"lol77@lolsadfs.com",
     "password":"asdkcvxfjaskldfj",
     "bio": "born and raised in Daytona Beach, Florida",
@@ -10,8 +9,7 @@
     "social_media":"Instagram: @jordancolubiale"
   },
   {
-    "first_name": "Andrew",
-    "last_name": "Gibbs",
+    "name": "Andrew Gibbs",
     "email":"lol2@ldsfsdol.com",
     "password":"asdkfjassdfgskldfj",
     "bio": "Likes d&d and watches anime",
@@ -20,8 +18,7 @@
     "social_media":"Instagram: @andrewgibbs"
   },
   {
-    "first_name": "Noel",
-    "last_name": "Stafford",
+    "name": "Noel Stafford",
     "email":"lol1@lsdfsaol.com",
     "password":"asdkfjaskldfj",
     "bio": "Roots against phillies",

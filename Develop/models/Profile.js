@@ -17,18 +17,18 @@ Profile.init(
       primaryKey: true,
       autoIncrement: true,
     },
-   first_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    last_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    // // last_name: {
+    // //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: false,
+      unique: true,
       validate: {
         isEmail: true,
       },
@@ -42,18 +42,19 @@ Profile.init(
     },
     bio: {
       type: DataTypes.STRING,
+      allowNull: true
     },
     skills: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     education: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     social_media: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
   },
   {
