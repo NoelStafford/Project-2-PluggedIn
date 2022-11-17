@@ -21,6 +21,7 @@
     "fetch": "^1.1.0",
     "mysql2": "^2.2.5",
     "node": "^19.1.0",
+    "node-fetch": "^3.3.0",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {

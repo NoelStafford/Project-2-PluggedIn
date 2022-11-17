@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const e = require('express');
-const fetch = require('node-fetch');
+// const fetch = require('node-fetch');
 
 
 //this is the API key
