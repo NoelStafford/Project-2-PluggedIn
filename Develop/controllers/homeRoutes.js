@@ -52,11 +52,33 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
   // If the profile is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/addjob');
     return;
   }
 
   res.render('login');
 });
 
+router.get('/addjob', async (req, res) => {
+
+  res.render('addjob');
+});
+
+
+// THIS DEFINITELY DISPLAYS ALL OF THEM!!!! POG CHAMP
+router.get('/jobs', async (req, res) => {
+  const JobData = await Job.findAll()
+
+const jobs = JobData.map((job) => job.get({ plain: true }));
+
+res.render('jobs', { 
+  jobs, 
+  logged_in: req.session.logged_in 
+});
+});
+
+
+
 module.exports = router;
+
+

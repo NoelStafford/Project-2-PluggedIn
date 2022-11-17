@@ -1,24 +1,24 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const title = document.querySelector('#job-title').value.trim();
+  const job_title = document.querySelector('#job-title').value.trim();
   const salary = document.querySelector('#job-salary').value.trim();
-  const description = document.querySelector('#job-desc').value.trim();
+  const job_description = document.querySelector('#job-desc').value.trim();
 
-  if (title && salary && description) {
-    const response = await fetch(`/api/jobs`, {
+  if (job_title && salary && job_description) {
+    const response = await fetch(`/api/listing`, {
       method: 'POST',
-      body: JSON.stringify({ title, salary, description }),
+      body: JSON.stringify({ job_title, salary, job_description }),
       headers: {
         'Content-Type': 'application/json',
       },
     });
-
-  //   if (response.ok) {
-  //     document.location.replace('/job');
-  //   } else {
-  //     alert('Failed to create job');
-  //   }
+    console.log(job_title, salary,job_description)
+    if (response.ok) {
+      document.location.replace('/jobs');
+    } else {
+      alert('Failed to create job');
+    }
   }
 };
 
@@ -40,8 +40,8 @@ const delButtonHandler = async (event) => {
 
 document
   .querySelector('.new-job-form')
-  .addEventListener('submit', newFormHandler);
+  .addEventListener('click', newFormHandler);
 
-document
-  .querySelector('.job-list')
-  .addEventListener('click', delButtonHandler);
+// document
+//   .querySelector('.job-list')
+//   .addEventListener('click', delButtonHandler);
