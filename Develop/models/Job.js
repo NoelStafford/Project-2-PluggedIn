@@ -39,6 +39,10 @@ Job.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    salary: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     profile_id: {
       type: DataTypes.INTEGER,
       references: {
