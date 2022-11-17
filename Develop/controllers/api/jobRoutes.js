@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Job } = require('../../models');
 const withAuth = require('../../utils/auth');
-const fetch = require('node-fetch');
+// const fetch = require('node-fetch');
 
 router.post('/', async (req, res) => {
   try {
