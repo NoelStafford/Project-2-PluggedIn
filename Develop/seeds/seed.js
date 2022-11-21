@@ -16,13 +16,13 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const profile of profileData) {
-    await Profile.create({
-      ...profile,
-      user_id: profiles[Math.floor(Math.random() * profiles.length)].id,
+  // for (const profile of profileData) {
+  //   await Profile.create({
+  //     ...profile,
+  //     user_id: profiles[Math.floor(Math.random() * profiles.length)].id,
 
-    });
-  }
+  //   });
+  // }
   for (const job of jobData) {
     await Job.create({
       ...job,

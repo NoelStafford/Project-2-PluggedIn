@@ -3,28 +3,8 @@ const { Job, Profile } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-  try {
-    // Get all jobs and JOIN with profile data
-    const jobData = await Job.findAll({
-      include: [
-        {
-          model: Profile,
-          attributes: ['name'],
-        },
-      ],
-    });
 
-    // Serialize data so the template can read it
-    const jobs = jobData.map((job) => job.get({ plain: true }));
-
-    // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      jobs, 
-      logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+    res.render('homepage');
 });
 
 router.get('/job/:id', async (req, res) => {
@@ -32,7 +12,7 @@ router.get('/job/:id', async (req, res) => {
     const jobData = await Job.findByPk(req.params.id, {
       include: [
         {
-          model: Profile,
+          model: Job,
           attributes: ['name'],
         },
       ],
@@ -55,12 +35,12 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in profile based on the session ID
     const profileData = await Profile.findByPk(req.session.profile_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Job }],
+      // include: [{ model: Job }],
     });
 
     const profile = profileData.get({ plain: true });
 
-    res.render('profile', {
+    res.render('createprofile', {
       ...profile,
       logged_in: true
     });
@@ -72,11 +52,33 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
   // If the profile is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/addjob');
     return;
   }
 
   res.render('login');
 });
 
+router.get('/addjob', async (req, res) => {
+
+  res.render('addjob');
+});
+
+
+// THIS DEFINITELY DISPLAYS ALL OF THEM!!!! POG CHAMP
+router.get('/jobs', async (req, res) => {
+  const JobData = await Job.findAll()
+
+const jobs = JobData.map((job) => job.get({ plain: true }));
+
+res.render('jobs', { 
+  jobs, 
+  logged_in: req.session.logged_in 
+});
+});
+
+
+
 module.exports = router;
+
+
